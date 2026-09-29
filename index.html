@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Enrollment System</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <h1>Student Enrollment System</h1>
+    <p class="intro">Complete the form to add a student to the list below.</p>
+
+    <form id="enrollmentForm" novalidate>
+      <div class="grid">
+        <div class="field">
+          <label for="studentId">Student ID *</label>
+          <input id="studentId" type="text">
+          <span class="error" id="studentIdError"></span>
+        </div>
+
+        <div class="field">
+          <label for="prefix">Prefix</label>
+          <input id="prefix" type="text" placeholder="e.g., Mr.">
+          <span class="error" id="prefixError"></span>
+        </div>
+
+        <div class="field">
+          <label for="firstName">First Name *</label>
+          <input id="firstName" type="text">
+          <span class="error" id="firstNameError"></span>
+        </div>
+
+        <div class="field">
+          <label for="middleName">Middle Name</label>
+          <input id="middleName" type="text">
+          <span class="error" id="middleNameError"></span>
+        </div>
+
+        <div class="field">
+          <label for="lastName">Last Name *</label>
+          <input id="lastName" type="text">
+          <span class="error" id="lastNameError"></span>
+        </div>
+
+        <div class="field">
+          <label for="suffix">Suffix</label>
+          <input id="suffix" type="text" placeholder="e.g., Jr.">
+          <span class="error" id="suffixError"></span>
+        </div>
+
+        <div class="field">
+          <label for="email">Email *</label>
+          <input id="email" type="email">
+          <span class="error" id="emailError"></span>
+        </div>
+
+        <div class="field">
+          <label for="course">Course *</label>
+          <select id="course">
+            <option value="">Select a course</option>
+            <option value="BSIT">BSIT</option>
+            <option value="BSCS">BSCS</option>
+            <option value="BMMA">BMMA</option>
+            <option value="BSAIS">BSAIS</option>
+          </select>
+          <span class="error" id="courseError"></span>
+        </div>
+
+        <div class="field" id="majorField" hidden>
+          <label for="major">BSIT Major *</label>
+          <select id="major">
+            <option value="">Select a major</option>
+            <option value="Net Sec">Net Sec</option>
+            <option value="Web Tech">Web Tech</option>
+            <option value="ERP">ERP</option>
+          </select>
+          <span class="error" id="majorError"></span>
+        </div>
+
+        <div class="field">
+          <label for="yearLevel">Year Level *</label>
+          <select id="yearLevel">
+            <option value="">Select a year level</option>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year</option>
+            <option value="3rd Year">3rd Year</option>
+          </select>
+          <span class="error" id="yearLevelError"></span>
+        </div>
+      </div>
+
+      <button type="submit">Submit Enrollment</button>
+      <p id="successMessage" role="status"></p>
+    </form>
+
+    <section class="results">
+      <h2>Submitted Students</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Student ID</th>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Course</th>
+              <th>Major</th>
+              <th>Year Level</th>
+            </tr>
+          </thead>
+          <tbody id="studentTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
